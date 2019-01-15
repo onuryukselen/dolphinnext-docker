@@ -5,6 +5,7 @@ RUN apt-get -y upgrade
 RUN apt-get dist-upgrade
  
 # Install apache, PHP, and supplimentary programs. curl and lynx-cur are for debugging the container.
+RUN apt-get update
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y install apache2 \
                     curl mysql-server libreadline-dev libsqlite3-dev libbz2-dev libssl-dev python python-dev \
                     libmysqlclient-dev python-pip git expect default-jre \
