@@ -20,6 +20,7 @@ DBPORT=3306
 SSHPATH=/export/.dolphinnext/.ssh
 AMAZON=z76fg0iua298gh4
 AMZPATH=/export/.dolphinnext/.amz
+GOOGPATH=/export/.dolphinnext/.goog
 SALT=23fg7r3
 PEPPER=3d5f1s8
 MASTER=u7ygvc2
