@@ -102,5 +102,12 @@ RUN cd /usr/local/share && wget https://github.com/singularityware/singularity/r
     ./configure --prefix=/usr/local && \
     make && make install
 
+# Downloading gcloud package
+RUN curl https://dl.google.com/dl/cloudsdk/release/google-cloud-sdk.tar.gz > /tmp/google-cloud-sdk.tar.gz
+RUN mkdir -p /usr/local/gcloud \
+  && tar -C /usr/local/gcloud -xvf /tmp/google-cloud-sdk.tar.gz \
+  && /usr/local/gcloud/google-cloud-sdk/install.sh
+ENV PATH $PATH:/usr/local/gcloud/google-cloud-sdk/bin
+
 RUN echo "DONE!"
 
