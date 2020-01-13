@@ -1,6 +1,7 @@
 ; This is the main DolphinNext configuration file. It contains the
 ; configuration directives.
 ;
+; DB: Database name
 ; PUBWEB_URL: url to reach public web directory (eg. http://localhost:8080/dolphinnext/tmp/pub for localhost)
 ; RUNPATH, PUBWEB_URL and OCPU_PUBWEB_URL should end with same directory structure
 ; OCPU_URL: url to reach local ocpu server (eg. http://localhost for localhost in which http://localhost/ocpu exist in the server)
@@ -35,7 +36,7 @@ PUBWEB_URL = http://localhost:8080/dolphinnext/tmp/pub
 OCPU_URL = http://localhost
 DEBROWSER_URL = http://localhost
 OCPU_PUBWEB_URL = http://localhost/dolphinnext/tmp/pub
-NEXTFLOW_VERSION = 19.04.0
+NEXTFLOW_VERSION = 19.10.0
 LDAP_SERVER=test
 DN_STRING=test
 BIND_USER= SVCLinuxLDAPAuth
@@ -49,8 +50,10 @@ ALLOW_SIGNUP=true
 ALLOW_SIGNUPGOOGLE=true
 ; User Preferences for profile page 
 SHOW_AMAZON_KEYS=true
+SHOW_GOOGLE_KEYS=true
 SHOW_SSH_KEYS=true
 SHOW_GROUPS=true
+SHOW_GITHUB=true
 ; User Preferences for log tab in run page
 ; Note: Set SHOW_RUN_NEXTFLOWLOG as false to hide amazon keys.
 SHOW_RUN_LOG=true
@@ -62,5 +65,10 @@ SHOW_RUN_NEXTFLOWLOG=true
 SHOW_RUN_NEXTFLOWNF=true
 SHOW_RUN_NEXTFLOWCONFIG=true
 
-
+; Wizard Settings
+SHOW_WIZARD=true
+; In order to use test profile, please define a run environment and share with group.
+; Use shared group id to define TEST_PROFILE_GROUP_ID.
+;SHOW_TEST_PROFILE=true
+;TEST_PROFILE_GROUP_ID=18
 
