@@ -1,6 +1,6 @@
 FROM ubuntu:xenial
 MAINTAINER Alper Kucukural <alper.kucukural@umassmed.edu>
-RUN echo "start"
+RUN echo "init"
 RUN apt-get update
 RUN apt-get -y upgrade
 RUN apt-get dist-upgrade
