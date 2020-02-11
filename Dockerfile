@@ -18,7 +18,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get -y install apache2 \
 
 
 RUN apt-get clean
-RUN pip install simple-crypt
+RUN pip install simple-crypt mysql-connector
 RUN add-apt-repository -y ppa:opencpu/opencpu-2.1
 RUN LC_ALL=C.UTF-8 apt-add-repository ppa:ondrej/php
 RUN apt-get update
@@ -88,7 +88,7 @@ RUN chown -R ${APACHE_RUN_USER}:${APACHE_RUN_GROUP} /var/www/html/dolphinnext
 RUN find /var/lib/mysql -type f -exec touch {} \; && service mysql start && \  
     mysql -u root -e 'CREATE DATABASE dolphinnext;' && \
     cat /var/www/html/dolphinnext/db/dolphinnext.sql|mysql -uroot dolphinnext && \
-    cd /var/www/html/dolphinnext/db && ./runUpdate dolphinnext
+    python /var/www/html/dolphinnext/scripts/updateDN.py
 
 RUN cd /usr/local/share && wget https://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/edirect.tar.gz && \
     tar xvfz edirect.tar.gz && \
