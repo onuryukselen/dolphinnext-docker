@@ -35,7 +35,7 @@ mkdir -p /path/to/mount
 
 2. While running the container;
 ```
-docker run --privileged -m 10G -p 8080:80 -v /path/to/mount:/export -ti dolphinnext-docker /bin/bash
+docker run -m 10G -p 8080:80 -v /path/to/mount:/export -ti dolphinnext-docker /bin/bash
 ```
 *if you want to run a pre-build
 ```
