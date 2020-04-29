@@ -53,7 +53,7 @@ startup
 
 http://localhost:8080/dolphinnext
 
-Running in the Amazon or Google Cloud
+Running on the Amazon or Google Cloud
 ------
 We define `localhost:8080` in config/.sec file and using that to log in. You need to change `localhost` to that IP address or amazon/google domain you use. So static IP address would solve the issue that you will not need to change it every time you create a instance. Please update `BASE_PATH` and `PUBWEB_URL` as follows:
 
