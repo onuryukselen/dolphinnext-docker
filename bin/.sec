@@ -30,7 +30,6 @@ VERIFY=2s8f5h
 TIMEZONE=America/New_York
 RUNPATH=../tmp/pub
 TEMPPATH=../tmp
-CENTRAL_API_URL=https://www.dolphinnext.com
 API_URL = http://localhost/dolphinnext
 BASE_PATH = http://localhost:8080/dolphinnext
 PUBWEB_URL = http://localhost:8080/dolphinnext/tmp/pub
