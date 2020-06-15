@@ -49,7 +49,11 @@ docker run -m 10G -p 8080:80 -v /path/to/mount:/export -ti ummsbiocore/dolphinne
 ```
 startup
 ```
-4. Now, you can open your browser to access dolphinnext using the url below.
+4. Verify that `dolphinnext` and `mysql` folders located inside of the `export` folder:
+```
+ls /export
+```
+5. Now, you can open your browser to access dolphinnext using the url below.
 
 http://localhost:8080/dolphinnext
 
