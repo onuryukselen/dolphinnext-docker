@@ -96,12 +96,16 @@ RUN cd /usr/local/share && wget https://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect
     cd edirect && ./setup.sh
 RUN mv /usr/local/share/edirect/* /usr/local/sbin/.
 
-RUN wget https://dl.google.com/go/go1.12.7.linux-amd64.tar.gz && \
-    tar -C /usr/local -xzf go1.12.7.linux-amd64.tar.gz && \
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y cryptsetup
+
+RUN export VERSION=1.13 OS=linux ARCH=amd64 && \
+    wget https://dl.google.com/go/go$VERSION.$OS-$ARCH.tar.gz && \
+    tar -C /usr/local -xzvf go$VERSION.$OS-$ARCH.tar.gz && \
+    rm go$VERSION.$OS-$ARCH.tar.gz && \
     export PATH=$PATH:/usr/local/go/bin && \
-    export VERSION=3.2.1 && \ 
+    export VERSION=3.6.4 && \
     wget https://github.com/sylabs/singularity/releases/download/v${VERSION}/singularity-${VERSION}.tar.gz && \
-    tar -xzf singularity-${VERSION}.tar.gz && \ 
+    tar -xzf singularity-${VERSION}.tar.gz && \
     cd singularity && ./mconfig && make -C ./builddir && make -C ./builddir install
 
 ADD bin /usr/local/bin
