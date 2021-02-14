@@ -99,7 +99,7 @@ RUN mv /usr/local/share/edirect/* /usr/local/sbin/.
 RUN wget https://dl.google.com/go/go1.12.7.linux-amd64.tar.gz && \
     tar -C /usr/local -xzf go1.12.7.linux-amd64.tar.gz && \
     export PATH=$PATH:/usr/local/go/bin && \
-    export VERSION=3.2.1 && \ 
+    export VERSION=3.6.4 && \ 
     wget https://github.com/sylabs/singularity/releases/download/v${VERSION}/singularity-${VERSION}.tar.gz && \
     tar -xzf singularity-${VERSION}.tar.gz && \ 
     cd singularity && ./mconfig && make -C ./builddir && make -C ./builddir install
